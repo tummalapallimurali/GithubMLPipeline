@@ -96,14 +96,18 @@ class ChurnModel:
         print("Confustion matrix saved")
 
     def roc_curve(self):
-        predictions = self.model_pipeline.predict(self.X_test)
-        fpr, tpr, thresholds = roc_curve(self.y_test, predictions)
-        plt.plot(fpr, tpr)
+        print("roc curve")
+        predictions = self.model_pipeline.predict_proba(self.X_test)[:,1]
+        fpr, tpr, _ = roc_curve(self.y_test, predictions)
+        plt.figure(figsize=(10,6))
+        plt.plot(fpr, tpr, label = f'AUC = {roc_auc_score(self.y_test, predictions)}')
+        plt.plot([0,1], [0,1], linestyle = "--")
         plt.xlabel("False Positive Rate")
         plt.ylabel("True Positive Rate")
         plt.title("ROC Curve")
+        plt.legend()
         plt.savefig("roc_curve.png")
-        print("ROC curve saved")
+        print("roc curve saved")
 
 
     def save_metrics(self, accuracy,f1):
@@ -136,9 +140,10 @@ if __name__ == "__main__":
     # plotting
 
     ChurnMod.plot_confusion_matrix()
-    ChurnMod.roc_curve()
+    
     #saving
     ChurnMod.save_metrics(accuracy_score, f1)
+    ChurnMod.roc_curve()
 
     # save pipline 
     #ChurnMod.save_pipeline()
