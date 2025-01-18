@@ -36,4 +36,4 @@ jobs:
         echo "## confusoion matrix" >> report.md
         echo "![confusion matrix](result.png)" >> report.md
 
-        cal comment create report.md
+        cml comment create report.md
