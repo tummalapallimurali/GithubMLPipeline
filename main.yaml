@@ -4,9 +4,11 @@ on:
   push:
     branches:
       - main
+      - feature/adding-roc-curve
   pull_request:
     branches:
       - main
+      - feature/adding-roc-curve
   workflow_dispatch:
 
 permissions: write-all
@@ -29,7 +31,7 @@ jobs:
     
     - name: Train
       run: |
-        python train_regression.py
+        python train_wine.py
     - name: Evaluate
       run: |
         python evaluate.py
