@@ -25,7 +25,7 @@ jobs:
     
     - name: Train
       run: |
-        python train.py
+        python train_regression.py
     - name: Evaluate
       env :
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
