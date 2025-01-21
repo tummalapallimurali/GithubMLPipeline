@@ -4,9 +4,11 @@ on:
   push:
     branches:
       - main
+      - feature/adding-roc-curve
   pull_request:
     branches:
       - main
+      - feature/adding-roc-curve
   workflow_dispatch:
 
 permissions: write-all
