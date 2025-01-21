@@ -29,7 +29,7 @@ jobs:
     
     - name: Train
       run: |
-        python train_regression.py
+        python train_wine.py
     - name: Evaluate
       run: |
         python evaluate.py
