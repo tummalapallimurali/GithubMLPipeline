@@ -9,7 +9,7 @@ from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score
 
 # Load the data
-data = pd.pd.read_csv('https://raw.githubusercontent.com/mlflow/mlflow/0.7.0/examples/sklearn_elasticnet_wine/train.csv')
+data = pd.read_csv('https://raw.githubusercontent.com/mlflow/mlflow/0.7.0/examples/sklearn_elasticnet_wine/train.csv')
 
 
 
